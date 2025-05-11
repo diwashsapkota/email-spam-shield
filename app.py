@@ -13,9 +13,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
-import nltk
-import os
-
 # Download NLTK resources (with silent option to avoid flooding logs)
 try:
     nltk.data.find('tokenizers/punkt')
@@ -378,7 +375,7 @@ with tab1:
                                 
                                 # Plot top terms
                                 fig, ax = plt.subplots(figsize=(10, 4))
-                                bars = sns.barplot(x='Importance', y='Term', data=top_terms_df, ax=ax, palette='viridis')
+                                bars = sns.barplot(x='Importance', y='Term', hue='Term', data=top_terms_df, ax=ax, palette='viridis', legend=False)
                                 ax.set_title('Most Important Terms in Email')
                                 ax.set_xlabel('Importance Score')
                                 ax.set_ylabel('')
@@ -450,7 +447,7 @@ with tab2:
             # Generate and display sample visualization
             st.markdown("### Comparative Analysis")
             fig, ax = plt.subplots(figsize=(10, 6))
-            sns.barplot(x='Model', y='F1-Score', data=sample_df, ax=ax, palette='viridis')
+            sns.barplot(x='Model', y='F1-Score', hue='Model', data=sample_df, ax=ax, palette='viridis', legend=False)
             ax.set_title('Model Comparison (Example Data)')
             ax.set_ylim(0, 1)
             for i, v in enumerate(sample_df['F1-Score']):
@@ -474,7 +471,7 @@ with tab2:
             
             with col1:
                 fig, ax = plt.subplots(figsize=(6, 4))
-                sns.barplot(x='Model', y='Training Time (s)', data=timing_df, palette='Blues_d')
+                sns.barplot(x='Model', y='Training Time (s)', hue='Model', data=timing_df, ax=ax, palette='Blues_d', legend=False)
                 ax.set_title('Training Time Comparison')
                 plt.xticks(rotation=45)
                 plt.tight_layout()
@@ -482,7 +479,7 @@ with tab2:
                 
             with col2:
                 fig, ax = plt.subplots(figsize=(6, 4))
-                sns.barplot(x='Model', y='Inference Time (ms)', data=timing_df, palette='Greens_d')
+                sns.barplot(x='Model', y='Inference Time (ms)', hue='Model', data=timing_df, ax=ax, palette='Greens_d', legend=False)
                 ax.set_title('Inference Time Comparison')
                 plt.xticks(rotation=45)
                 plt.tight_layout()
