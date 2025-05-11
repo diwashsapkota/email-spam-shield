@@ -1,0 +1,15 @@
+# After creating your GitHub repository, run these commands:
+
+# Replace 'your-username' with your actual GitHub username
+git remote add origin https://github.com/your-username/email-spam-shield.git
+git branch -M main
+git push -u origin main
+
+# If you prefer to use SSH instead of HTTPS, use this command instead:
+# git remote add origin git@github.com:your-username/email-spam-shield.git
+
+# If you have issues with authentication when using HTTPS, you may need to:
+# 1. Use GitHub CLI ('gh auth login')
+# 2. Create a personal access token on GitHub
+# 3. Configure your credential helper:
+#    git config --global credential.helper cache 
