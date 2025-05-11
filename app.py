@@ -38,8 +38,8 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={
-        'Get Help': 'https://www.github.com/yourusername/email-spam-classifier',
-        'Report a bug': 'https://www.github.com/yourusername/email-spam-classifier/issues',
+        'Get Help': 'https://www.github.com/diwashsapkota/email-spam-classifier',
+        'Report a bug': 'https://www.github.com/diwashsapkota/email-spam-classifier/issues',
         'About': "# Email Spam Classifier\nA machine learning application that detects spam emails using hybrid features and multiple classifiers."
     }
 )
