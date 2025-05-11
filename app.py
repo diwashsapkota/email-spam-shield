@@ -13,11 +13,18 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
+import nltk
+import os
+
 # Download NLTK resources (with silent option to avoid flooding logs)
 try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
     nltk.download('punkt', quiet=True)
+try:
+    nltk.data.find('tokenizers/punkt_tab')
+except LookupError:
+    nltk.download('punkt_tab', quiet=True)
 try:
     nltk.data.find('corpora/stopwords')
 except LookupError:
