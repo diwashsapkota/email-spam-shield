@@ -45,8 +45,8 @@ st.markdown("""
 <style>
     /* Modern color palette */
     :root {
-        --primary-color: #4361ee;
-        --secondary-color: #3a0ca3;
+        --primary-color: #fff5ee;
+        --secondary-color: #deb887;
         --accent-color: #4cc9f0;
         --text-color: #2b2d42;
         --light-bg: #f8f9fa;
@@ -73,7 +73,7 @@ st.markdown("""
     .sub-header {
         font-size: 1.6rem;
         font-weight: 600;
-        color: var(--secondary-color);
+        color: #deb887;
         margin-top: 2rem;
         margin-bottom: 1.2rem;
         border-bottom: 2px solid #f0f0f0;
@@ -130,9 +130,9 @@ if 'email_text' not in st.session_state:
 
 # Define example emails
 example_spam = """URGENT: You've won a $1,000 gift card! Click here to claim your prize now! 
-Limited time offer. Reply with your credit card details to confirm your identity."""
+Limited time offer. Forward the OTP you received few minutes ago to confirm your identity."""
 
-example_ham = """Hi John, I hope this email finds you well. I wanted to follow up on our meeting 
+example_ham = """Hi Diwash, I hope this email finds you well. I wanted to follow up on our meeting 
 last week about the quarterly report. I've attached the latest version with the updates we discussed. 
 Let me know if you need anything else before the presentation on Friday."""
 
@@ -173,7 +173,7 @@ with st.sidebar:
         """)
     
     st.markdown("---")
-    st.markdown('<p class="footer">Made with ❤️ using Streamlit</p>', unsafe_allow_html=True)
+    st.markdown('<p class="footer">Made using Streamlit</p>', unsafe_allow_html=True)
 
 # Main content
 st.markdown('<p class="main-header">Email Spam Shield</p>', unsafe_allow_html=True)
@@ -395,12 +395,12 @@ with tab2:
     st.markdown('<p class="sub-header">Model Performance Analysis</p>', unsafe_allow_html=True)
     
     # Check if performance files exist
-    perf_csv_exists = os.path.exists('performance_metrics.csv')
-    f1_img_exists = os.path.exists('model_comparison_f1.png')
-    cm_img_exists = os.path.exists('confusion_matrix_logistic_regression.png')
-    training_img_exists = os.path.exists('model_comparison_training_time.png')
-    inference_img_exists = os.path.exists('model_comparison_inference_time.png')
-    ablation_img_exists = os.path.exists('ablation_study.png')
+    perf_csv_exists = os.path.exists('/observations/performance_metrics.csv')
+    f1_img_exists = os.path.exists('/observations/model_comparison_f1.png')
+    cm_img_exists = os.path.exists('/observations/confusion_matrix_logistic_regression.png')
+    training_img_exists = os.path.exists('/observations/model_comparison_training_time.png')
+    inference_img_exists = os.path.exists('/observations/model_comparison_inference_time.png')
+    ablation_img_exists = os.path.exists('/observations/ablation_study.png')
     
     if not perf_csv_exists and not any([f1_img_exists, cm_img_exists, training_img_exists, inference_img_exists]):
         # Info box
